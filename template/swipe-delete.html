@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swipe to delete</title>
+    <link rel="stylesheet" href="../css/swipe-to-delete/index.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="time">9:41</div>
+      <div class="icons">
+        <img src="../assets/image/signal.png" alt="Battery" />
+        <img src="../assets/image/wifi.png" alt="WiFi" />
+        <img src="../assets/image/battery.png" alt="Signal" />
+      </div>
+    </div>
+    <div class="content">
+      <h1>Today<span class="date">26 Dec</span></h1>
+
+      <div class="todo-container">
+        <div class="todo-item swipe">
+          <input type="checkbox" id="task1" />
+          <label for="task1">Drink 8 glasses of water</label>
+          <div class="delete-btn">Delete</div>
+        </div>
+
+        <div class="category health">HEALTH</div>
+        <hr class="separator" />
+
+        <div class="todo-item">
+          <input type="checkbox" id="task2" />
+          <label for="task2">Complete work assignment</label>
+        </div>
+        <div class="category work">WORK</div>
+        <hr class="separator" />
+
+        <div class="todo-item">
+          <input type="checkbox" id="task3" />
+          <label for="task3">Write in a gratitude journal</label>
+        </div>
+        <div class="category mental">MENTAL HEALTH</div>
+
+        <div class="subtasks">
+          <div class="todo-item">
+            <input type="checkbox" id="subtask1" />
+            <label for="subtask1">Get a notebook</label>
+          </div>
+          <div class="todo-item">
+            <input type="checkbox" id="subtask2" />
+            <label for="subtask2">Follow the YouTube tutorial</label>
+          </div>
+        </div>
+
+        <div class="todo-item task4">
+          <input type="checkbox" id="task4" />
+          <label for="task4">Stretch everyday for 15 mins</label>
+        </div>
+        <div class="category health">HEALTH</div>
+        <hr class="separator" />
+      </div>
+      <div class="floating-box">
+        <img src="../assets/image/plus.png" alt="plus icon" />
+      </div>
+    </div>
+  </body>
+</html>

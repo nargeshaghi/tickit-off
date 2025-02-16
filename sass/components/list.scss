@@ -1,0 +1,66 @@
+.todo-container {
+    background: white;
+    padding: 20px;
+    margin-top: 80px;
+    width: 420px;
+  
+    .todo-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      padding: 10px;
+      label {
+        flex-grow: 1;
+        margin-left: 10px;
+      }
+      input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+    }
+  
+    .category {
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 5px;
+      margin-left: 40px;
+  
+      &.health {
+        background: rgba(121, 144, 248, 0.1);
+        color: rgb(121, 144, 248);
+      }
+      &.work {
+        background: rgba(70, 207, 139, 0.1);
+        color: rgb(70, 207, 139);
+      }
+      &.mental {
+        background: rgba(188, 94, 173, 0.1);
+        color: rgb(188, 94, 173);
+      }
+    }
+  
+    .subtasks {
+      padding-left: 25px;
+      margin-top: 5px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+      .todo-item {
+        border: none;
+        padding: 5px 10px;
+        font-size: 14px;
+      }
+    }
+  
+    .separator {
+      width: 100%;
+      border: none;
+      border-top: 1px solid #ddd;
+      margin-top: 5px;
+    }
+  }
+  
+  

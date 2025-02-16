@@ -1,0 +1,29 @@
+@use "../components/base.scss";
+@use "../components/plus.scss";
+@use "../components/list.scss";
+@use "../components/nav.scss";
+
+.content {
+  .date {
+    color: rgb(182, 181, 181);
+    font-weight: 400;
+    margin-left: 10px;
+  }
+}
+
+.category.time {
+  flex-direction: row;
+  gap: 5px; /* فاصله بین آیکون و متن */
+  background: rgba(102, 102, 102, 0.1);
+  color: #666666;
+  padding: 5px 10px;
+  border-radius: 4px;
+  width: fit-content; /* عرض را به اندازه‌ی محتوا تنظیم می‌کند */
+}
+
+.category.time img {
+  width: 14px; /* اندازه‌ی مناسب برای آیکون */
+  height: 14px;
+  vertical-align: middle;
+  margin-right: 5px;
+}

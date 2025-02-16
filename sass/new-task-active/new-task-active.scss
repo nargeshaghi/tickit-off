@@ -1,0 +1,75 @@
+@use "../components/base.scss";
+@use "../components/keyboard.scss";
+@use "../components/nav.scss";
+@use "../components/save-button.scss";
+  
+  .cross {
+    margin-left: 390px;
+    padding-top: 16px;
+  }
+  
+  .head {
+    font-family: inter;
+    font-weight: 400;
+    width: 350px;
+    font-size: 36px;
+    margin-top: 56px;
+  }
+  
+  .todo-container {
+    padding-right: 180px;
+    font-family: inter;
+    font-size: 17px;
+    font-weight: 400;
+  }
+  
+  .todo-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-top: 10px;
+  }
+  
+  .todo-item:last-child label {
+    color: #d6d6d6;
+  }
+  
+  .todo-item input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    padding: 0;
+  }
+  .box-container {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    margin-top: 155px;
+    margin-right: 140px;
+  }
+  
+  .box {
+    background-color: rgba(224, 224, 224, 0.4); /* زمینه طوسی */
+    color: rgba(102, 102, 102, 0.5);
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 12px;
+    font-family: "inter";
+    font-weight: 400;
+    border-radius: 4px;
+    width: fit-content;
+  }
+ 
+  .clock {
+    width: 62px;
+    height: 60px;
+    margin-top: 498px;
+    margin-right: 300px;
+    border-radius: 12px;
+    background-color: #efefef;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+  }
+  
+  

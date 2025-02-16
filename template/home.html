@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="../css/home/index.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="time"><a href="../template/view-task.html" target="_blank">9:41</a></div>
+      <div class="icons">
+        <img src="../assets/image/signal.png" alt="Battery" />
+        <img src="../assets/image/wifi.png" alt="WiFi" />
+        <img src="../assets/image/battery.png" alt="Signal" />
+      </div>
+    </div>
+    <div class="content">
+      <h1>Today<span class="date">26 Dec</span></h1>
+      <div class="grid-box">
+        <div
+          class="box health"
+          style="background-color: rgba(121, 144, 248, 0.1)"
+        >
+          <img class="icon1" src="../assets/image/heart.png" alt="heart" />
+          <span>6</span> Health
+        </div>
+        <div class="box work" style="background-color: rgba(70, 207, 139, 0.1)">
+          <img class="icon1" src="../assets/image/suitcase.png" alt="work" />
+          <span>5</span> Work
+        </div>
+        <div
+          class="box mental-health"
+          style="background-color: rgba(188, 94, 173, 0.1)"
+        >
+          <img class="icon2" src="../assets/image/hearth.png" alt="mental-health" />
+          <span>4</span> Mental Health
+        </div>
+        <div
+          class="box others"
+          style="background-color: rgba(144, 137, 134, 0.1)"
+        >
+          <img class="icon2" src="../assets/image/folder.png" alt="others" />
+          <span>13</span> Others
+        </div>
+      </div>
+      <div class="todo-container">
+        <div class="todo-item">
+          <input type="checkbox" id="task1" />
+          <label for="task1">Drink 8 glasses of water</label>
+        </div>
+        <div class="category health">HEALTH</div>
+        <hr class="separator" />
+
+        <div class="todo-item">
+          <input type="checkbox" id="task2" />
+          <label for="task2">Complete work assignment</label>
+        </div>
+        <div class="category work">WORK</div>
+        <hr class="separator" />
+
+        <div class="todo-item">
+          <input type="checkbox" id="task3" />
+          <label for="task3">Write in a gratitude journal</label>
+        </div>
+        <div class="category mental">MENTAL HEALTH</div>
+
+        <div class="subtasks">
+          <div class="todo-item">
+            <input type="checkbox" id="subtask1" />
+            <label for="subtask1">Get a notebook</label>
+          </div>
+          <div class="todo-item">
+            <input type="checkbox" id="subtask2" />
+            <label for="subtask2">Follow the YouTube tutorial</label>
+          </div>
+        </div>
+
+        <div class="todo-item task4">
+          <input type="checkbox" id="task4" />
+          <label for="task4">Stretch everyday for 15 mins</label>
+        </div>
+        <div class="category health">HEALTH</div>
+      </div>
+      <div class="floating-box">
+        <img src="../assets/image/plus.png" alt="plus icon" />
+      </div>
+    </div>
+  </body>
+</html>

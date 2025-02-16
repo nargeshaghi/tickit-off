@@ -1,0 +1,54 @@
+@use "../components/ـbase.scss";
+@use "../components/list.scss";
+@use "../components/nav.scss";
+@use "../components/plus.scss";
+
+.content {
+  .date {
+    color: rgb(182, 181, 181);
+    font-weight: 400;
+    margin-left: 10px;
+  }
+}
+
+.grid-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  width: 386px;
+  height: 194px;
+
+  .box {
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding: 16px;
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(18, 18, 18, 0.5);
+    width: 189px;
+    height: 93px;
+    position: relative;
+    span {
+      margin-right: 4px;
+      font-weight: 500;
+    }
+  }
+
+  .icon1 {
+    position: absolute;
+    top: 38%;
+    transform: translate(-50%, -50%);
+    padding-left: 17px;
+  }
+
+  .icon2 {
+    position: absolute;
+    top: 53%;
+    transform: translate(-50%, -50%);
+    padding-left: 17px;
+  }
+}
+

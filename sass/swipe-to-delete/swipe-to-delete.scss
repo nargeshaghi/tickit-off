@@ -1,0 +1,13 @@
+@use "../components/base.scss";
+@use "../components/nav.scss";
+@use "../components/list.scss";
+@use "../components/plus.scss";
+
+.content {
+  .date {
+    color: rgb(182, 181, 181);
+    font-weight: 400;
+    margin-left: 10px;
+  }
+}
+

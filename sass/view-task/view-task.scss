@@ -1,0 +1,18 @@
+@use "../components/base.scss";
+@use "../components/keyboard.scss";
+@use "../components/nav.scss";
+@use "../components/save-button.scss";
+@use "../components/list.scss";
+
+.cross {
+  margin-left: 390px;
+  padding-top: 16px;
+}
+
+.head {
+  font-family: inter;
+  font-weight: 400;
+  width: 350px;
+  font-size: 36px;
+  margin-top: 56px;
+}
