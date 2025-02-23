@@ -7,14 +7,6 @@
     <link rel="stylesheet" href="../css/home/index.css" />
   </head>
   <body>
-    <div class="header">
-      <div class="time"><a href="../template/view-task.html" target="_blank">9:41</a></div>
-      <div class="icons">
-        <img src="../assets/image/signal.png" alt="Battery" />
-        <img src="../assets/image/wifi.png" alt="WiFi" />
-        <img src="../assets/image/battery.png" alt="Signal" />
-      </div>
-    </div>
     <div class="content">
       <h1>Today<span class="date">26 Dec</span></h1>
       <div class="grid-box">
@@ -33,7 +25,11 @@
           class="box mental-health"
           style="background-color: rgba(188, 94, 173, 0.1)"
         >
-          <img class="icon2" src="../assets/image/hearth.png" alt="mental-health" />
+          <img
+            class="icon2"
+            src="../assets/image/hearth.png"
+            alt="mental-health"
+          />
           <span>4</span> Mental Health
         </div>
         <div
@@ -44,6 +40,7 @@
           <span>13</span> Others
         </div>
       </div>
+
       <div class="todo-container">
         <div class="todo-item">
           <input type="checkbox" id="task1" />
@@ -82,8 +79,11 @@
         </div>
         <div class="category health">HEALTH</div>
       </div>
+
       <div class="floating-box">
-        <img src="../assets/image/plus.png" alt="plus icon" />
+        <a href="../template/new-task-empty.html">
+          <img src="../assets/image/plus.png" alt="plus icon" />
+        </a>
       </div>
     </div>
   </body>

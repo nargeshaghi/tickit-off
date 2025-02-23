@@ -48,7 +48,7 @@ body {
   flex-grow: 1;
   margin-left: 10px;
 }
-.todo-container .todo-item input[type=checkbox] {
+.todo-container .todo-item input[type="checkbox"] {
   width: 18px;
   height: 18px;
   cursor: pointer;
@@ -90,35 +90,6 @@ body {
   margin-top: 20px;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-}
-.header .time {
-  font-size: 11px;
-  font-weight: 400;
-  padding-left: 21px;
-  padding-top: 12px;
-  margin-right: 335px;
-}
-.header .icons {
-  display: flex;
-  gap: 4px;
-  padding-left: 21px;
-  padding-top: 12px;
-}
-.header .icons img {
-  width: 11px;
-  height: 11px;
-}
-
-.content .date {
-  color: rgb(182, 181, 181);
-  font-weight: 400;
-  margin-left: 10px;
-  margin-right: 200px;
-}
-
 .category.time {
   flex-direction: row;
   gap: 5px; /* فاصله بین آیکون و متن */
@@ -135,5 +106,5 @@ body {
   height: 14px;
   vertical-align: middle;
   margin-right: 5px;
-}/*# sourceMappingURL=with-dates.css.map */
+} /*# sourceMappingURL=with-dates.css.map */
 /* hidding time box and subtask makes other pages */
