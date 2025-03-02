@@ -13,11 +13,18 @@
       /></a>
     </div>
 
-    <input class="head" type="text" placeholder="Write a new task..." />
+    <input
+      id="text"
+      class="head"
+      type="text"
+      placeholder="Write a new task..."
+    />
 
-    <button class="btn">Save</button>
+    <button id="saveText" onclick="saveText()" class="btn">Save</button>
     <button class="clock">
       <img src="../assets/image/clock grey.png" alt="clock" />
     </button>
+    <ul id="saveTexts"></ul>
+    <script src="../js/new-task-emty.js"></script>
   </body>
 </html>
