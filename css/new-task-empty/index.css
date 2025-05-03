@@ -29,7 +29,6 @@ body {
   }
 }
 
-/* دکمه Save */
 .btn {
   width: 316px;
   height: 60px;
@@ -69,4 +68,13 @@ body {
   border: none;
   cursor: pointer;
   position: absolute;
-} /*# sourceMappingURL=new-task-empty.css.map */
+}
+
+.trash-icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.trash-icon:hover {
+  transform: rotate(-20deg) scale(1.2);
+}
