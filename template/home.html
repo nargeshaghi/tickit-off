@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="content">
-      <h1>Today<span class="date">26 Dec</span></h1>
+      <h1>Today <span class="date">26 Dec</span></h1>
       <div class="grid-box">
         <div
           class="box health"
@@ -41,43 +41,8 @@
         </div>
       </div>
 
-      <div class="todo-container">
-        <div class="todo-item">
-          <input type="checkbox" id="task1" />
-          <label for="task1">Drink 8 glasses of water</label>
-        </div>
-        <div class="category health">HEALTH</div>
-        <hr class="separator" />
-
-        <div class="todo-item">
-          <input type="checkbox" id="task2" />
-          <label for="task2">Complete work assignment</label>
-        </div>
-        <div class="category work">WORK</div>
-        <hr class="separator" />
-
-        <div class="todo-item">
-          <input type="checkbox" id="task3" />
-          <label for="task3">Write in a gratitude journal</label>
-        </div>
-        <div class="category mental">MENTAL HEALTH</div>
-
-        <div class="subtasks">
-          <div class="todo-item">
-            <input type="checkbox" id="subtask1" />
-            <label for="subtask1">Get a notebook</label>
-          </div>
-          <div class="todo-item">
-            <input type="checkbox" id="subtask2" />
-            <label for="subtask2">Follow the YouTube tutorial</label>
-          </div>
-        </div>
-
-        <div class="todo-item task4">
-          <input type="checkbox" id="task4" />
-          <label for="task4">Stretch everyday for 15 mins</label>
-        </div>
-        <div class="category health">HEALTH</div>
+      <div class="todo-container" id="taskList">
+        <!-- تسک‌ها اینجا به صورت داینامیک اضافه خواهند شد -->
       </div>
 
       <div class="floating-box">
@@ -86,5 +51,7 @@
         </a>
       </div>
     </div>
+
+    <script src="../js/home.js"></script>
   </body>
 </html>

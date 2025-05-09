@@ -3,28 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New task-Empty</title>
+    <title>New task</title>
     <link rel="stylesheet" href="../css/new-task-empty/index.css" />
   </head>
   <body>
     <div class="cross">
       <a href="../template/home.html">
-        <img src="../assets/image/cross.png" alt="cross icon"
-      /></a>
+        <img src="../assets/image/cross.png" alt="cross icon" />
+      </a>
     </div>
 
-    <input
-      id="taskInput"
-      class="head"
-      type="text"
-      placeholder="Write a new task..."
-    />
+    <div class="task-form-container">
+      <h1>Creat or Edit Task</h1>
+      <input
+        type="text"
+        id="taskInput"
+        placeholder="Write a new task..."
+        class="task-input"
+      />
 
     <button id="saveTaskButton" class="btn">Save</button>
-    <button class="clock">
-      <img src="../assets/image/clock grey.png" alt="clock" />
-    </button>
-    <ul id="taskList"></ul>
+    
+
     <script src="../js/new-task.js"></script>
   </body>
 </html>

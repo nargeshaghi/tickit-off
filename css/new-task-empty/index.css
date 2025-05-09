@@ -32,11 +32,11 @@ body {
 .btn {
   width: 316px;
   height: 60px;
-  margin-top: 700px;
-  margin-left: 100px;
+  margin-top: 500px;
+
   border-radius: 12px;
-  background-color: #dedede;
-  color: #898989;
+  background-color: rgb(32, 32, 231);
+  color: #ffffff;
   font-size: 18px;
   font-weight: 400;
   border: none;
@@ -49,32 +49,30 @@ body {
   padding-top: 16px;
 }
 
-.head {
-  color: #898989 !important;
-  font-family: "inter";
-  font-weight: 400;
-  width: 350px;
-  font-size: 36px;
-  margin-top: 56px;
+
+
+/* استایل کلی */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
-.clock {
-  width: 62px;
-  height: 60px;
-  margin-top: 700px;
-  margin-right: 300px;
-  border-radius: 12px;
-  background-color: #dedede;
-  border: none;
-  cursor: pointer;
-  position: absolute;
+
+
+
+.task-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #a7a7a7;
+  border-radius: 4px;
 }
 
-.trash-icon {
-  display: inline-block;
-  transition: transform 0.3s ease;
+
+
+.btn:hover {
+  background-color: #1dc825;
 }
 
-.trash-icon:hover {
-  transform: rotate(-20deg) scale(1.2);
-}
