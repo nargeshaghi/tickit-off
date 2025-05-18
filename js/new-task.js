@@ -2,12 +2,26 @@ document.addEventListener("DOMContentLoaded", function () {
   let taskInput = document.getElementById("taskInput");
   let saveTaskButton = document.getElementById("saveTaskButton");
 
-  // بررسی وجود تسک برای ویرایش
-  let editIndex = localStorage.getItem("editIndex");
-  if (editIndex !== null) {
-    // دریافت تسک از localStorage
-    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    taskInput.value = tasks[editIndex].text; // نمایش تسک برای ویرایش
+  let editIndexRaw = localStorage.getItem("editIndex");
+  let editIndex = null;
+
+  console.log("Raw editIndex from localStorage:", editIndexRaw);
+
+  if (editIndexRaw !== null) {
+    editIndex = parseInt(editIndexRaw, 10);
+    console.log("Parsed editIndex:", editIndex);
+
+    if (!isNaN(editIndex)) {
+      let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+      if (tasks[editIndex]) {
+        taskInput.value = tasks[editIndex].text;
+      } else {
+        console.warn("No task at this index");
+      }
+    } else {
+      console.warn("editIndex is not a valid number");
+    }
   }
 
   saveTaskButton.addEventListener("click", function () {
@@ -18,26 +32,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    if (editIndex !== null) {
-      // ویرایش تسک
-      tasks[editIndex].text = taskText; // ویرایش متن تسک
-      localStorage.setItem("tasks", JSON.stringify(tasks));
 
-      // حذف ایندکس ویرایش
-      localStorage.removeItem("editIndex");
+    if (editIndex !== null && !isNaN(editIndex)) {
+      // ویرایش تسک
+      if (tasks[editIndex]) {
+        tasks[editIndex].text = taskText;
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+        localStorage.removeItem("editIndex");
+      } else {
+        alert("Task not found for editing.");
+        return;
+      }
     } else {
       // اضافه کردن تسک جدید
       let newTask = {
         text: taskText,
-        completed: false, // وضعیت اولیه تیک
+        completed: false,
       };
       tasks.push(newTask);
       localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 
-    taskInput.value = ""; // پاک کردن فیلد ورودی
-    alert("Changes saved successfully!"); // پیام تغییرات ذخیره شده
-    window.location.href = "../template/home.html"; // برگشت به صفحه اصلی
+    taskInput.value = "";
+    alert("Changes saved successfully!");
+    window.location.href = "../template/home.html";
   });
 
   taskInput.addEventListener("keydown", function (event) {
