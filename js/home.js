@@ -1,64 +1,58 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const taskList = document.getElementById("taskList");
-
+$(document).ready(function () {
   let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  let $taskList = $("#taskList");
 
-  tasks.sort(function (a, b) {
-    return a.completed - b.completed;
-  });
+  if ($taskList.length) {
+    function renderTasks() {
+      tasks.sort((a, b) => a.completed - b.completed);
+      $taskList.empty();
 
-  function renderTasks() {
-    taskList.innerHTML = "";
-    tasks.forEach(function (task, index) {
-      let listItem = document.createElement("div");
-      listItem.classList.add("todo-item");
+      tasks.forEach(function (task) {
+        let $listItem = $("<div>").addClass("todo-item");
+        let $taskCheckbox = $("<input>")
+          .attr("type", "checkbox")
+          .prop("checked", task.completed);
 
-      let taskLabel = document.createElement("label");
-      taskLabel.textContent = task.text;
+        let $taskLabel = $("<label>").text(task.text);
+        let $editIcon = $("<img>")
+          .attr("src", "../assets/image/edit.svg")
+          .addClass("edit-icon");
+        let $deleteIcon = $("<img>")
+          .attr("src", "../assets/image/trash.svg")
+          .addClass("delete-icon");
+        let $taskCategory = $("<div>").addClass("category").text("General");
 
-      let taskCheckbox = document.createElement("input");
-      taskCheckbox.type = "checkbox";
-      taskCheckbox.id = task.text;
+        $deleteIcon.on("click", function () {
+          tasks = tasks.filter((t) => t.id !== task.id);
+          localStorage.setItem("tasks", JSON.stringify(tasks));
+          renderTasks();
+        });
 
-      taskCheckbox.checked = task.completed;
+        $editIcon.on("click", function () {
+          window.location.href = `new-task.html?id=${task.id}`;
+        });
 
-      let editIcon = document.createElement("img");
-      editIcon.src = "../assets/image/edit.svg";
-      editIcon.classList.add("edit-icon");
+        $taskCheckbox.on("change", function () {
+          let targetTask = tasks.find((t) => t.id === task.id);
+          if (targetTask) {
+            targetTask.completed = $(this).prop("checked");
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            renderTasks();
+          }
+        });
 
-      let deleteIcon = document.createElement("img");
-      deleteIcon.src = "../assets/image/trash.svg";
-      deleteIcon.classList.add("delete-icon");
+        $listItem.append(
+          $taskCheckbox,
+          $taskLabel,
+          $editIcon,
+          $deleteIcon,
+          $taskCategory
+        );
 
-      deleteIcon.addEventListener("click", function () {
-        tasks.splice(index, 1);
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-        renderTasks();
+        $taskList.append($listItem);
       });
+    }
 
-      editIcon.addEventListener("click", function () {
-        localStorage.setItem("editIndex", index);
-
-        window.location.href = "../template/new-task.html";
-      });
-
-      let taskCategory = document.createElement("div");
-      taskCategory.classList.add("category");
-      taskCategory.textContent = "General";
-
-      taskCheckbox.addEventListener("change", function () {
-        task.completed = taskCheckbox.checked;
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-      });
-
-      listItem.appendChild(taskCheckbox);
-      listItem.appendChild(taskLabel);
-      listItem.appendChild(editIcon);
-      listItem.appendChild(deleteIcon);
-      listItem.appendChild(taskCategory);
-      taskList.appendChild(listItem);
-    });
+    renderTasks();
   }
-
-  renderTasks();
 });

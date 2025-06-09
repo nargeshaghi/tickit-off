@@ -1,66 +1,49 @@
-document.addEventListener("DOMContentLoaded", function () {
-  let taskInput = document.getElementById("taskInput");
-  let saveTaskButton = document.getElementById("saveTaskButton");
+$(document).ready(function () {
+  const params = new URLSearchParams(window.location.search);
+  const editId = Number(params.get("id"));
 
-  let editIndexRaw = localStorage.getItem("editIndex");
-  let editIndex = null;
+  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-  console.log("Raw editIndex from localStorage:", editIndexRaw);
+  let $taskInput = $("#taskInput");
+  let $saveTaskButton = $("#saveTaskButton");
 
-  if (editIndexRaw !== null) {
-    editIndex = parseInt(editIndexRaw, 10);
-    console.log("Parsed editIndex:", editIndex);
-
-    if (!isNaN(editIndex)) {
-      let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-
-      if (tasks[editIndex]) {
-        taskInput.value = tasks[editIndex].text;
-      } else {
-        console.warn("No task at this index");
-      }
-    } else {
-      console.warn("editIndex is not a valid number");
+  if (editId) {
+    let taskToEdit = tasks.find((task) => task.id === editId);
+    if (taskToEdit) {
+      $taskInput.val(taskToEdit.text);
     }
   }
 
-  saveTaskButton.addEventListener("click", function () {
-    const taskText = taskInput.value.trim();
+  $saveTaskButton.on("click", function () {
+    const taskText = $taskInput.val().trim();
     if (taskText === "") {
       alert("Task cannot be empty");
       return;
     }
 
-    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-
-    if (editIndex !== null && !isNaN(editIndex)) {
-      // ویرایش تسک
-      if (tasks[editIndex]) {
-        tasks[editIndex].text = taskText;
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-        localStorage.removeItem("editIndex");
-      } else {
-        alert("Task not found for editing.");
-        return;
+    if (editId) {
+      let taskToEdit = tasks.find((task) => task.id === editId);
+      if (taskToEdit) {
+        taskToEdit.text = taskText;
       }
     } else {
-      // اضافه کردن تسک جدید
       let newTask = {
+        id: Date.now(),
         text: taskText,
         completed: false,
       };
       tasks.push(newTask);
-      localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 
-    taskInput.value = "";
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    $taskInput.val("");
     alert("Changes saved successfully!");
-    window.location.href = "../template/home.html";
+    window.location.href = "home.html";
   });
 
-  taskInput.addEventListener("keydown", function (event) {
+  $taskInput.on("keydown", function (event) {
     if (event.key === "Enter") {
-      saveTaskButton.click();
+      $saveTaskButton.click();
     }
   });
 });
